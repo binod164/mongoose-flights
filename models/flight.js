@@ -2,6 +2,16 @@ import mongoose from 'mongoose'
 
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema
+
+const ticketSchema = new Schema({
+  seat: {
+    type: String
+  },
+  price: {
+    type:Number,
+    min: 0
+  }
+})
 	
 const flightSchema = new Schema({
   airline: {
@@ -29,6 +39,7 @@ const flightSchema = new Schema({
 })
 
 const Flight = mongoose.model('Flight', flightSchema)
+const Ticket = mongoose.model('Ticket', ticketSchema)
 
 export{
   Flight
