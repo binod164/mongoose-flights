@@ -10,5 +10,5 @@ const mealSchema = new Schema({
 const Meal = mongoose.model('Meal', mealSchema)
 
 export{
-  Flight
+  Meal
 }
