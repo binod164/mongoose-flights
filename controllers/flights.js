@@ -2,13 +2,12 @@ import { Flight } from '../models/flight.js'
 import { Meal } from '../models/meal.js'
 
 function newFlight(req, res) {
-res.render('flights/new',{
-  title:"Add Flight"
-})
+  res.render('flights/new',{
+    title:'Add Flight'
+  })
 }
 
 function create(req, res) {
-
   const flight = new Flight(req.body)
   flight.save(function(err) {
 		if (err) return res.render('/flights/new')
@@ -58,13 +57,6 @@ function addToMeal(req,res){
     })
   })
 }
-
-// function deleteFlight(req, res) {
-//   Flight.findByIdAndDelete(req.params.id, function(err, flight) {
-//     res.redirect('/flights')
-//   })
-// }
-
 
 export {
   newFlight as new,

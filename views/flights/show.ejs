@@ -35,13 +35,9 @@
         method="post"
       >
         <label for="content-textarea">Seat:</label>
-        <input name="seat" required pattern="[A-F][1-9]\d?">
+        <input name="seat" placeholder="[A-F][1-9]" required pattern="[A-F][1-9]\d?">
         <label for="price-select">Price:</label>
-        <select name="price" id="price-select">
-          <option value="200">200</option>
-          <option value="400">400</option>
-          <option value="600">600</option>
-        </select>
+        <input type="number" name="price" required>
         <button type="submit">Add Ticket</button>
       </form>
       <% if (flight.tickets.length) { %>
@@ -56,7 +52,7 @@
             <% flight.tickets.forEach(function(ticket) { %>
               <tr>
                 <td><%= ticket.seat %></td>
-                <td><%= ticket.price %></td>
+                <td><%= "$" + ticket.price %></td>
               </tr>
             <% }) %>
           </tbody>

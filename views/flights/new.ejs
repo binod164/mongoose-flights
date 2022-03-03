@@ -3,7 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1><% title %> </h1>
+  <h1><%= title %> </h1>
   <form action="/flights" method="POST">
     <label>Airline:
       <select name="airline">
@@ -22,10 +22,10 @@
       </select>
     </label><br>
     <label>Flight Number:
-      <input type="number" name="flightNo">
+      <input type="number" name="flightNo" required>
     </label><br>
     <label>Departs:
-      <input type="datetime-local" name="departs">
+      <input type="datetime-local" name="departs" value="2023-03-02T08:30" >
     </label><br>
     <button type="submit">Add Flight</button>
   </form>
